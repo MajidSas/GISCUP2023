@@ -3,7 +3,7 @@
 - GDAL command line tool
 - QGIS desktop application
 - Python3
-- Rasterio Python package
+- Rasterio, Fiona, Shapely, Geopandas Python package
 
 
 ## Data preprocess steps:
