@@ -60,14 +60,14 @@ Following steps describe such process:
 2. Merge DEM if they belong to the same polygon region
 3. Rescale the pixel size to align with the Greenland raster pixel size
 4. Clip the merged and rescaled DEM to the same extent as each polygon region
-Scripts can be found: gdal_merge.py, gdal_clip_dem.sh
+Scripts can be found: `gdal_merge_dem.py`, `gdal_clip_dem.sh`
 
 
 3.Partitioning by region
 We use the GDAL command line to clip original rasters according to the extent of the corresponding polygon region.
 We have two scripts, one works for generating training data and the other is for testing data.
-The script for extracting training data is: gdal_clip_train_raster.sh
-The script for extracting testing data is: gdal_clip_test_raster.sh
+The script for extracting training data is: `gdal_clip_train_raster.sh`
+The script for extracting testing data is: `gdal_clip_test_raster.sh`
 
 
 This provides us with one image per region for each timestamp, and associated label image for the training data.
