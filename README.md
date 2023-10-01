@@ -10,7 +10,8 @@
 Please make sure these specific folders are not present in the current directory, since the script will create the path and generate files: test, train, filter, dem, filter_dem
 
 
-Run scripts under the same directory as “2023_SIGSPATIAL_Cup_data_files”
+Run scripts under the same directory as “2023_SIGSPATIAL_Cup_data_files”. 
+
 Data folder can be found here: https://drive.google.com/drive/folders/1cGyDLLmZafQGetRfnqp8NPGrozed6nx-?usp=sharing
 
 
