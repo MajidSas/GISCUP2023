@@ -38,10 +38,11 @@ python3 gdal_merge_dem.py
 
 
 ### Following content describe each step in detail:
-1.Rasterizing polygons
-We use the Rasterio package to read the training polygon GeoPackage, extracting them based on their respective feature name (corresponding to a specific raster image).
-Then we rasterize these polygons, setting the output pixel value to 1, if the pixel intersects or overlaps with the respective polygon.
+**1.Rasterizing polygons**
 
+We use the Rasterio package to read the training polygon GeoPackage, extracting them based on their respective feature name (corresponding to a specific raster image).
+
+Then we rasterize these polygons, setting the output pixel value to 1, if the pixel intersects or overlaps with the respective polygon.
 The script is: `rasterize_polygon.py`
 
 
@@ -49,7 +50,7 @@ We use the GDAL command line to clip the rasterized polygon files according to t
 The script is: `gdal_clip_polygon.sh`
 
 
-2.Downloading ArcticDEM
+**2.Downloading ArcticDEM**
 
 Download link: https://data.pgc.umn.edu/elev/dem/setsm/ArcticDEM/mosaic/latest/10m
 
@@ -67,21 +68,25 @@ Following steps describe such process:
 2. Merge DEM if they belong to the same polygon region
 3. Rescale the pixel size to align with the Greenland raster pixel size
 4. Clip the merged and rescaled DEM to the same extent as each polygon region
+   
 Scripts can be found: `gdal_merge_dem.py`, `gdal_clip_dem.sh`
 
 
-3.Partitioning by region
+**3.Partitioning by region**
+
 We use the GDAL command line to clip original rasters according to the extent of the corresponding polygon region.
 We have two scripts, one works for generating training data and the other is for testing data.
 
 The script for extracting training data is: `gdal_clip_train_raster.sh`
+
 The script for extracting testing data is: `gdal_clip_test_raster.sh`
 
 
 This provides us with one image per region for each timestamp, and associated label image for the training data.
 
 
-All the processed data generated from the previous steps, can be accessed here:
+
+**All the processed data generated from the previous steps, can be accessed here:**
 https://drive.google.com/drive/folders/1cGyDLLmZafQGetRfnqp8NPGrozed6nx-?usp=sharing
 
 
