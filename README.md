@@ -11,11 +11,12 @@ Please make sure these specific folders are not present in the current directory
 
 
 Run scripts under the same directory as “2023_SIGSPATIAL_Cup_data_files”
+Data folder can be found here: https://drive.google.com/drive/folders/1cGyDLLmZafQGetRfnqp8NPGrozed6nx-?usp=sharing
 
 
 ### Step 1: rasterize polygons and clip the resulted rasters
 ```
-python3  rasterize_polygon.py
+python3 rasterize_polygon.py
 ./gdal_clip_polygon.sh
 ```
 
