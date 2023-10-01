@@ -24,7 +24,7 @@ python3 rasterize_polygon.py
 
 ### Step 2: merge and align ArcticDEM with provided Greenland ratsters
 ```
-python3 gdal_merge.py
+python3 gdal_merge_dem.py
 ./gdal_clip_dem.sh
 ```
 
