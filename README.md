@@ -41,6 +41,7 @@ python3 gdal_merge_dem.py
 1.Rasterizing polygons
 We use the Rasterio package to read the training polygon GeoPackage, extracting them based on their respective feature name (corresponding to a specific raster image).
 Then we rasterize these polygons, setting the output pixel value to 1, if the pixel intersects or overlaps with the respective polygon.
+
 The script is: `rasterize_polygon.py`
 
 
@@ -49,13 +50,18 @@ The script is: `gdal_clip_polygon.sh`
 
 
 2.Downloading ArcticDEM
+
 Download link: https://data.pgc.umn.edu/elev/dem/setsm/ArcticDEM/mosaic/latest/10m
+
 First we download the ArcticDEM data, filtering the files that overlap with the greenland landscape.
 Then we use QGIS to visualize and observe the downloaded DEM files. We separate files based on the polygon regions each file covers.
+
 We save all DEM data in the folder named **greenland_dem**.
+
 Within each polygon region, we use the GDAL command line to merge all corresponding files.
 To ensure precise alignment with the exact pixel location as in Greenland raster, we rescale DEM pixel size to the same size as in Greenland raster.
 Lastly, we align this DEM raster with the respective polygon region extent.
+
 Following steps describe such process:
 1. Reproject DEM to epsg:3857
 2. Merge DEM if they belong to the same polygon region
@@ -67,6 +73,7 @@ Scripts can be found: `gdal_merge_dem.py`, `gdal_clip_dem.sh`
 3.Partitioning by region
 We use the GDAL command line to clip original rasters according to the extent of the corresponding polygon region.
 We have two scripts, one works for generating training data and the other is for testing data.
+
 The script for extracting training data is: `gdal_clip_train_raster.sh`
 The script for extracting testing data is: `gdal_clip_test_raster.sh`
 
