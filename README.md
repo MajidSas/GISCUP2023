@@ -52,6 +52,7 @@ The script is: `gdal_clip_polygon.sh`
 Download link: https://data.pgc.umn.edu/elev/dem/setsm/ArcticDEM/mosaic/latest/10m
 First we download the ArcticDEM data, filtering the files that overlap with the greenland landscape.
 Then we use QGIS to visualize and observe the downloaded DEM files. We separate files based on the polygon regions each file covers.
+We save all DEM data in the folder named **greenland_dem**.
 Within each polygon region, we use the GDAL command line to merge all corresponding files.
 To ensure precise alignment with the exact pixel location as in Greenland raster, we rescale DEM pixel size to the same size as in Greenland raster.
 Lastly, we align this DEM raster with the respective polygon region extent.
